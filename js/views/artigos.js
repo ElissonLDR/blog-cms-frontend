@@ -42,6 +42,7 @@ const ViewArtigos = {
       <div class="row g-4" id="lista-artigos">
         <div class="col-12 text-center py-5">
           <div class="spinner-border text-primary" role="status"></div>
+          <p class="text-muted mt-3 mb-0">Carregando artigos... A API pode levar até 1 minuto no plano Free.</p>
         </div>
       </div>
     `;
