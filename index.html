@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog CMS — Painel</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/estilos.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Menu lateral -->
+        <aside class="menu-lateral">
+            <div class="menu-lateral__brand">
+                <span class="menu-lateral__icone">✦</span>
+                <div>
+                    <strong>Blog CMS</strong>
+                    <small>Painel administrativo</small>
+                </div>
+            </div>
+
+            <nav class="menu-lateral__nav">
+                <a href="#/dashboard" class="menu-lateral__link" data-rota="dashboard">Dashboard</a>
+                <a href="#/artigos" class="menu-lateral__link" data-rota="artigos">Artigos</a>
+                <a href="#/categorias" class="menu-lateral__link" data-rota="categorias">Categorias</a>
+            </nav>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <main class="conteudo-principal">
+            <header class="topbar">
+                <button class="btn btn-outline-secondary btn-sm d-lg-none" id="btn-toggle-menu" type="button">☰ Menu</button>
+                <span class="topbar__titulo">Gerenciamento de conteúdo</span>
+            </header>
+
+            <div id="alertas-container" class="alertas-container"></div>
+            <section id="area-conteudo" class="area-conteudo"></section>
+        </main>
+    </div>
+
+    <!-- Modal de visualização de artigo -->
+    <div class="modal fade" id="modal-visualizar" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-titulo">Artigo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="modal-imagem" class="img-fluid rounded mb-3 w-100" alt="">
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <span class="badge text-bg-light" id="modal-categoria"></span>
+                        <span class="badge text-bg-light" id="modal-data"></span>
+                        <span id="modal-status"></span>
+                    </div>
+                    <p class="fw-semibold" id="modal-resumo"></p>
+                    <div id="modal-conteudo" class="modal-conteudo"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/components/alertas.js"></script>
+    <script src="js/components/modal-visualizar.js"></script>
+    <script src="js/views/dashboard.js"></script>
+    <script src="js/views/artigos.js"></script>
+    <script src="js/views/categorias.js"></script>
+    <script src="js/views/formulario-artigo.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+        // Toggle do menu em telas pequenas
+        document.getElementById("btn-toggle-menu").addEventListener("click", () => {
+            document.querySelector(".menu-lateral").classList.toggle("aberto");
+        });
+    </script>
+</body>
+</html>

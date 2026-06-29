@@ -1,0 +1,253 @@
+/* ============================================
+   Blog CMS — Estilos personalizados
+   Complementa o Bootstrap 5
+   ============================================ */
+
+:root {
+    --cor-primaria: #4f46e5;
+    --cor-primaria-escura: #3730a3;
+    --cor-fundo: #f4f6fb;
+    --cor-sidebar: #111827;
+    --cor-texto-sidebar: #e5e7eb;
+    --sombra-card: 0 8px 24px rgba(15, 23, 42, 0.08);
+    --raio-borda: 14px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    background: var(--cor-fundo);
+    color: #1f2937;
+}
+
+/* Layout principal com sidebar fixa */
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.menu-lateral {
+    width: 260px;
+    background: var(--cor-sidebar);
+    color: var(--cor-texto-sidebar);
+    padding: 1.5rem 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    transition: transform 0.25s ease;
+}
+
+.menu-lateral__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 1rem;
+}
+
+.menu-lateral__brand strong {
+    display: block;
+    font-size: 1.1rem;
+}
+
+.menu-lateral__brand small {
+    color: #9ca3af;
+    font-size: 0.75rem;
+}
+
+.menu-lateral__icone {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--cor-primaria), #7c3aed);
+    display: grid;
+    place-items: center;
+    font-size: 1.1rem;
+}
+
+.menu-lateral__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.menu-lateral__link {
+    color: #d1d5db;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.menu-lateral__link:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+}
+
+.menu-lateral__link.ativo {
+    background: rgba(79, 70, 229, 0.25);
+    color: #fff;
+    font-weight: 600;
+}
+
+.conteudo-principal {
+    flex: 1;
+    margin-left: 260px;
+    min-width: 0;
+}
+
+.topbar {
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.topbar__titulo {
+    font-weight: 600;
+    color: #374151;
+}
+
+.alertas-container {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2000;
+    width: min(360px, calc(100% - 2rem));
+}
+
+.area-conteudo {
+    padding: 1.5rem;
+}
+
+.page-header {
+    margin-bottom: 1.5rem;
+}
+
+.page-header h2 {
+    margin-bottom: 0.25rem;
+    font-weight: 700;
+}
+
+/* Cards de estatísticas do dashboard */
+.stat-card {
+    background: #fff;
+    border-radius: var(--raio-borda);
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--sombra-card);
+    border-left: 4px solid var(--cor-primaria);
+}
+
+.stat-card__label {
+    display: block;
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-bottom: 0.35rem;
+}
+
+.stat-card__valor {
+    font-size: 2rem;
+    line-height: 1;
+    color: #111827;
+}
+
+.stat-card--categorias { border-left-color: #0ea5e9; }
+.stat-card--publicados { border-left-color: #10b981; }
+.stat-card--rascunhos { border-left-color: #f59e0b; }
+
+/* Cards de artigos */
+.artigo-card {
+    border: none;
+    border-radius: var(--raio-borda);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.artigo-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-card);
+}
+
+.artigo-card__img {
+    height: 180px;
+    object-fit: cover;
+}
+
+.artigo-card__img--placeholder {
+    display: grid;
+    place-items: center;
+    background: #e5e7eb;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.artigo-card__meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+.artigo-card__acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.filtros-bar,
+.card {
+    border: none;
+    border-radius: var(--raio-borda);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: #fff;
+    border-radius: var(--raio-borda);
+    color: #6b7280;
+    box-shadow: var(--sombra-card);
+}
+
+.modal-conteudo {
+    white-space: pre-wrap;
+    line-height: 1.7;
+    color: #374151;
+}
+
+.btn-primary {
+    background: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+}
+
+.btn-primary:hover {
+    background: var(--cor-primaria-escura);
+    border-color: var(--cor-primaria-escura);
+}
+
+/* Responsivo — menu lateral recolhível */
+@media (max-width: 991.98px) {
+    .menu-lateral {
+        transform: translateX(-100%);
+    }
+
+    .menu-lateral.aberto {
+        transform: translateX(0);
+    }
+
+    .conteudo-principal {
+        margin-left: 0;
+    }
+}
