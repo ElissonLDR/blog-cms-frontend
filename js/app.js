@@ -26,6 +26,8 @@ const App = {
   /** Vincula cliques do menu à navegação. */
   _vincularMenu() {
     document.querySelectorAll(".menu-lateral__link").forEach((link) => {
+      if (link.classList.contains("menu-lateral__link--externo")) return;
+
       link.addEventListener("click", (e) => {
         e.preventDefault();
         this.navegar(link.dataset.rota);

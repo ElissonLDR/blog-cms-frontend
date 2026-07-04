@@ -97,6 +97,13 @@ body {
     font-weight: 600;
 }
 
+.menu-lateral__link--externo {
+    margin-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 1rem;
+    font-size: 0.9rem;
+}
+
 .conteudo-principal {
     flex: 1;
     margin-left: 260px;
@@ -235,6 +242,211 @@ body {
 .btn-primary:hover {
     background: var(--cor-primaria-escura);
     border-color: var(--cor-primaria-escura);
+}
+
+/* ============================================
+   Blog público — leitura de artigos
+   ============================================ */
+
+.blog-publico {
+    background: #f8fafc;
+}
+
+.blog-header {
+    background: linear-gradient(135deg, #111827, #1e293b);
+    color: #fff;
+    padding: 1.25rem 0;
+}
+
+.blog-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.blog-header__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+.blog-header__brand strong {
+    display: block;
+    font-size: 1.1rem;
+}
+
+.blog-header__brand small {
+    color: #9ca3af;
+    font-size: 0.75rem;
+}
+
+.blog-header__icone {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--cor-primaria), #7c3aed);
+    display: grid;
+    place-items: center;
+    font-size: 1.1rem;
+}
+
+.blog-main {
+    padding: 2rem 0 3rem;
+    min-height: calc(100vh - 160px);
+}
+
+.blog-hero {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.blog-hero h1 {
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.blog-hero p {
+    color: #6b7280;
+    margin-bottom: 0;
+}
+
+.blog-filtros {
+    border: none;
+    border-radius: var(--raio-borda);
+}
+
+.blog-card {
+    border: none;
+    border-radius: var(--raio-borda);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.blog-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-card);
+}
+
+.blog-card__link {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    height: 100%;
+}
+
+.blog-card__img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-card__img--placeholder {
+    display: grid;
+    place-items: center;
+    background: #e5e7eb;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.blog-card__categoria {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--cor-primaria);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+}
+
+.blog-card__titulo {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.blog-card__resumo {
+    color: #6b7280;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.blog-card__data {
+    display: block;
+    font-size: 0.85rem;
+    color: #9ca3af;
+}
+
+.blog-post {
+    max-width: 760px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: var(--raio-borda);
+    padding: 2rem;
+    box-shadow: var(--sombra-card);
+}
+
+.blog-post__voltar {
+    display: inline-block;
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.blog-post__voltar:hover {
+    color: var(--cor-primaria-escura);
+}
+
+.blog-post__imagem {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.blog-post__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.blog-post__titulo {
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.blog-post__resumo {
+    font-size: 1.15rem;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+}
+
+.blog-post__conteudo {
+    white-space: pre-wrap;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: #374151;
+}
+
+.blog-empty {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background: #fff;
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-card);
+    color: #6b7280;
+}
+
+.blog-footer {
+    padding: 1.5rem 0;
+    border-top: 1px solid #e5e7eb;
+    background: #fff;
 }
 
 /* Responsivo — menu lateral recolhível */
