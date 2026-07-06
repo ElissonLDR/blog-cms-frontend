@@ -1,14 +1,14 @@
-# Blog CMS — Front-end
+# Blog CMS Front-end
 
-Este é o **site** do Blog CMS — a parte que você vê e usa no navegador.
+Eu fiz este site para ser a parte visual do Blog CMS. É aqui que a pessoa usa o sistema no navegador.
 
-Tem duas áreas principais: o **painel administrativo** (`index.html`), onde você gerencia artigos e categorias (criar, editar, excluir, buscar e filtrar); e o **blog público** (`blog.html`), onde qualquer pessoa pode ler os artigos já publicados. Tudo é feito com HTML, CSS e JavaScript puro — sem React ou Vue — e se comunica com a API do back-end.
+Separei em duas áreas. O **painel** (`index.html`) é onde eu gerencio artigos e categorias: criar, editar, excluir, buscar e filtrar. O **blog público** (`blog.html`) é onde qualquer um lê os artigos já publicados. Usei só HTML, CSS e JavaScript puro, sem React ou Vue, e o site conversa com a API que fiz no back-end.
 
-Projeto da disciplina de Desenvolvimento Full Stack Básico (Pós-graduação).
+Projeto da disciplina de Desenvolvimento Full Stack Básico da Pós.
 
 ## Acesso online (GitHub Pages)
 
-**Site publicado:** [https://elissonldr.github.io/blog-cms-frontend/](https://elissonldr.github.io/blog-cms-frontend/)
+Publiquei o site aqui: [https://elissonldr.github.io/blog-cms-frontend/](https://elissonldr.github.io/blog-cms-frontend/)
 
 ### Páginas
 
@@ -22,7 +22,7 @@ Projeto da disciplina de Desenvolvimento Full Stack Básico (Pós-graduação).
 | Blog público (leitura) | [https://elissonldr.github.io/blog-cms-frontend/blog.html](https://elissonldr.github.io/blog-cms-frontend/blog.html) |
 | Ler um artigo | `https://elissonldr.github.io/blog-cms-frontend/blog.html#/post/{id}` |
 
-> O painel usa rotas por **hash** (`#/dashboard`, `#/artigos`, etc.). O blog público é uma página separada (`blog.html`).
+> No painel eu usei rotas por **hash** (`#/dashboard`, `#/artigos`, etc.). O blog público é outra página (`blog.html`).
 
 ## Stack
 
@@ -34,12 +34,12 @@ Projeto da disciplina de Desenvolvimento Full Stack Básico (Pós-graduação).
 
 ## Instalação
 
-Não há dependências para instalar. Basta clonar o repositório.
+Não tem dependência para instalar. Só clonar o repositório.
 
 ## Execução
 
-1. Certifique-se de que a **API está rodando** (`http://127.0.0.1:5000`).
-2. Abra o `index.html` no navegador **ou** sirva a pasta com um servidor local:
+1. Deixe a **API rodando** (`http://127.0.0.1:5000`).
+2. Abra o `index.html` no navegador **ou** suba um servidor local na pasta:
 
 ```bash
 cd frontend
@@ -48,41 +48,41 @@ python -m http.server 8080
 
 Acesse: `http://127.0.0.1:8080`
 
-> **Importante:** altere `API_BASE_URL` em `js/config.js` se a API estiver em outro endereço (ex.: deploy no Render).
+> Se a API estiver em outro endereço (por exemplo no Render), mude o `API_BASE_URL` em `js/config.js`.
 
-## Funcionalidades
+## O que eu implementei
 
-- Dashboard com estatísticas
-- CRUD de artigos (cards com visualizar, editar, excluir)
-- CRUD de categorias
+- Dashboard com totais de posts e categorias
+- Listagem de artigos em cards (visualizar, editar, excluir)
+- Cadastro e edição de categorias
 - Busca por texto
 - Filtros por categoria e status
-- Formulário de cadastro/edição com geração automática de slug
+- Formulário de artigo com slug gerado automaticamente pelo título
 - Menu lateral responsivo
-- Alertas e modal de visualização
-- Blog público para leitura de artigos publicados
+- Alertas e modal para ver o artigo completo
+- Página pública só com artigos publicados
 
 ## Estrutura do projeto
 
 ```
 frontend/
-├── index.html              # Painel administrativo (SPA)
-├── blog.html               # Blog público (leitura)
+├── index.html              # Painel administrativo
+├── blog.html               # Blog público
 ├── css/
 │   └── estilos.css
 ├── js/
 │   ├── config.js           # URL da API
-│   ├── api.js              # Cliente HTTP
-│   ├── utils.js            # Funções auxiliares
-│   ├── app.js              # Roteador SPA
-│   ├── blog.js             # Blog público
-│   ├── components/         # Componentes reutilizáveis
-│   └── views/              # Telas da aplicação
-└── assets/                 # Imagens estáticas (opcional)
+│   ├── api.js              # Chamadas para o back-end
+│   ├── utils.js            # Funções que uso em várias telas
+│   ├── app.js              # Troca de telas pelo hash da URL
+│   ├── blog.js             # Lógica do blog público
+│   ├── components/         # Alertas e modal
+│   └── views/              # Dashboard, artigos, categorias, formulário
+└── assets/                 # Imagens (opcional)
 ```
 
 ## Deploy
 
-- **GitHub Pages:** [https://elissonldr.github.io/blog-cms-frontend/](https://elissonldr.github.io/blog-cms-frontend/)
-- **Render Static Site** (alternativa)
+- Publiquei no **GitHub Pages**: [https://elissonldr.github.io/blog-cms-frontend/](https://elissonldr.github.io/blog-cms-frontend/)
+- Também dá para usar **Render Static Site**
 - A URL da API em produção está em `js/config.js` (`API_BASE_URL`)
