@@ -1,8 +1,9 @@
 /**
- * Cliente HTTP — encapsula chamadas Fetch para todas as rotas da API.
+ * Chamadas à API — cada função aqui bate em uma rota do back-end.
  */
 const ApiClient = {
-    /** Monta URL completa com query string opcional. */
+
+    /** Monta a URL completa, com parâmetros de busca se precisar (?busca=...) */
     _url(caminho, params = {}) {
         const url = new URL(`${Config.API_BASE_URL}${caminho}`);
         Object.entries(params).forEach(([chave, valor]) => {
@@ -13,7 +14,7 @@ const ApiClient = {
         return url.toString();
     },
 
-    /** Executa requisição genérica e trata erros HTTP. */
+    /** Faz a requisição HTTP (fetch) e trata erro se a API devolver status ruim */
     async _request(url, options = {}) {
         const response = await fetch(url, {
             headers: { "Content-Type": "application/json", ...options.headers },

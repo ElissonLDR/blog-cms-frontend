@@ -1,15 +1,15 @@
 /**
- * Componente de alertas temporários (sucesso, erro, info).
+ * Mensagens de sucesso/erro que aparecem no topo da tela.
  */
 const Alertas = {
     container: null,
 
-    /** Inicializa o container de alertas no DOM. */
+    /** Pega o elemento HTML onde os alertas serão inseridos */
     iniciar() {
         this.container = document.getElementById("alertas-container");
     },
 
-    /** Exibe alerta Bootstrap que some após alguns segundos. */
+    /** Mostra um alerta que some sozinho depois de alguns segundos */
     mostrar(mensagem, tipo = "success") {
         const alerta = document.createElement("div");
         alerta.className = `alert alert-${tipo} alert-dismissible fade show shadow-sm`;

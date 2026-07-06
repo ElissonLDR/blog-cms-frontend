@@ -1,8 +1,9 @@
 /**
- * Funções utilitárias compartilhadas pelo front-end.
+ * Funções auxiliares usadas em várias telas.
  */
 const Utils = {
-    /** Formata data ISO para exibição em pt-BR. */
+
+    /** Transforma data do banco (2024-01-15...) em texto legível (15 jan. 2024) */
     formatarData(dataIso) {
         if (!dataIso) return "—";
         const data = new Date(dataIso);
@@ -13,7 +14,7 @@ const Utils = {
         });
     },
 
-    /** Gera slug a partir do título. */
+    /** Cria slug a partir do título: "Meu Post" vira "meu-post" */
     gerarSlug(titulo) {
         return titulo
             .toLowerCase()
@@ -25,7 +26,7 @@ const Utils = {
             .replace(/-+/g, "-");
     },
 
-    /** Retorna badge HTML conforme status do post. */
+    /** Devolve HTML do badge colorido (Publicado ou Rascunho) */
     badgeStatus(status) {
         const mapa = {
             published: { classe: "bg-success", texto: "Publicado" },
@@ -35,7 +36,7 @@ const Utils = {
         return `<span class="badge ${info.classe}">${info.texto}</span>`;
     },
 
-    /** Escapa HTML para evitar XSS ao renderizar conteúdo dinâmico. */
+    /** Escapa texto para não quebrar o HTML nem permitir scripts maliciosos */
     escaparHtml(texto) {
         const div = document.createElement("div");
         div.textContent = texto ?? "";

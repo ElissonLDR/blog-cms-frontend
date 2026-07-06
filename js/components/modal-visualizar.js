@@ -1,15 +1,15 @@
 /**
- * Modal reutilizável para visualização completa de um artigo.
+ * Janela (modal) para ver o artigo completo sem sair da listagem.
  */
 const ModalVisualizar = {
     modal: null,
 
-    /** Configura instância Bootstrap do modal. */
+    /** Prepara o modal do Bootstrap */
     iniciar() {
         this.modal = new bootstrap.Modal(document.getElementById("modal-visualizar"));
     },
 
-    /** Preenche e abre o modal com dados do post. */
+    /** Preenche os campos do modal com os dados do post e abre */
     abrir(post) {
         document.getElementById("modal-titulo").textContent = post.title;
         document.getElementById("modal-categoria").textContent = post.category_name || "—";

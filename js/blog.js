@@ -1,14 +1,16 @@
 /**
- * Blog público — listagem e leitura de artigos publicados.
+ * Blog público (blog.html) — só mostra artigos publicados para leitura.
  */
 const BlogPublico = {
     categorias: [],
 
+    /** Inicia e escuta mudanças na URL (#/post/1) */
     iniciar() {
         window.addEventListener("hashchange", () => this._resolverRota());
         this._resolverRota();
     },
 
+    /** Decide se mostra a lista ou a página de um artigo */
     async _resolverRota() {
         const hash = window.location.hash.replace(/^#\/?/, "");
         const partes = hash.split("/");
@@ -21,6 +23,7 @@ const BlogPublico = {
         await this.renderizarLista();
     },
 
+    /** Monta a página com busca, filtro e grid de cards */
     async renderizarLista() {
         document.title = "Blog CMS — Artigos";
         const area = document.getElementById("blog-conteudo");
@@ -60,6 +63,7 @@ const BlogPublico = {
         await this.carregarPosts();
     },
 
+    /** Mostra um artigo completo pelo id */
     async renderizarPost(id) {
         const area = document.getElementById("blog-conteudo");
         area.innerHTML = `
@@ -112,6 +116,7 @@ const BlogPublico = {
         }
     },
 
+    /** Carrega categorias no filtro */
     async carregarCategorias() {
         try {
             this.categorias = await ApiClient.listarCategorias();
@@ -128,6 +133,7 @@ const BlogPublico = {
         }
     },
 
+    /** Busca só posts publicados, com busca e categoria */
     async carregarPosts() {
         const lista = document.getElementById("blog-lista");
         const filtros = {
@@ -159,6 +165,7 @@ const BlogPublico = {
         }
     },
 
+    /** HTML de um card na listagem pública */
     _cardHtml(post) {
         const imagem = post.image
             ? `<img src="${Utils.escaparHtml(post.image)}" class="card-img-top blog-card__img" alt="">`
@@ -181,6 +188,7 @@ const BlogPublico = {
         `;
     },
 
+    /** Clique no card leva para #/post/id */
     _vincularCards() {
         document.querySelectorAll(".blog-card__link").forEach((link) => {
             link.addEventListener("click", (e) => {

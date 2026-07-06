@@ -1,7 +1,6 @@
 /**
- * Configuração da URL base da API.
- * Local: http://127.0.0.1:5000
- * Produção (Render): https://SEU-SERVICO.onrender.com
+ * URL base da API.
+ * No PC usa localhost; no GitHub Pages usa o Render.
  */
 const Config = {
     API_BASE_URL:
