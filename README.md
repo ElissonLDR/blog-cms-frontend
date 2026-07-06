@@ -1,6 +1,10 @@
 # Blog CMS — Front-end
 
-SPA (Single Page Application) para gerenciamento de artigos, consumindo a API REST do Blog CMS.
+Este é o **site** do Blog CMS — a parte que você vê e usa no navegador.
+
+Tem duas áreas principais: o **painel administrativo** (`index.html`), onde você gerencia artigos e categorias (criar, editar, excluir, buscar e filtrar); e o **blog público** (`blog.html`), onde qualquer pessoa pode ler os artigos já publicados. Tudo é feito com HTML, CSS e JavaScript puro — sem React ou Vue — e se comunica com a API do back-end.
+
+Projeto da disciplina de Desenvolvimento Full Stack Básico (Pós-graduação).
 
 ## Acesso online (GitHub Pages)
 
@@ -19,10 +23,6 @@ SPA (Single Page Application) para gerenciamento de artigos, consumindo a API RE
 | Ler um artigo | `https://elissonldr.github.io/blog-cms-frontend/blog.html#/post/{id}` |
 
 > O painel usa rotas por **hash** (`#/dashboard`, `#/artigos`, etc.). O blog público é uma página separada (`blog.html`).
-
-## Descrição
-
-Interface administrativa com dashboard, listagem em cards, formulários, busca, filtros e modal de visualização. Inclui também uma **página pública** (`blog.html`) para leitura dos artigos publicados. Desenvolvida com HTML5, CSS3 e JavaScript puro (ES6 + Fetch API).
 
 ## Stack
 
